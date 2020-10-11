@@ -5,10 +5,10 @@ const authorText = document.getElementById('author');
 const twitterBtn = document.getElementById('twitter');
 const newQuoteBtn = document.getElementById('new-quote');
 const loader = document.getElementById('loader');
-//const btnContainer = document.getElementById('btn-Container');
+const btnContainer = document.getElementById('btn-Container');
 
 //declare error counter
-//var errorCounter = 0;
+var errorCounter = 0;
 
 // Loader
 function showLoadingSpinner(){
@@ -55,20 +55,20 @@ async function getQuote(){
         hideLoadingSpinner(); 
     } catch (error) {
         //count errors up to ten, show error message
-        //errorCounter = errorCounter + 1;
+        errorCounter = errorCounter + 1;
         
-        ////if(error<10){
-        //getQuote();
-        //}else{
-            //hide other elements show error
-            //loader.hidden=true;
-            //authorText.hidden=true;
-            //quoteContainer.hidden=false;
-            //quoteText.innerText= 'Whoops, something went wrong! Please try again later';
-
-        //}
-
+        if(error<10){
         getQuote();
+        }else{
+            //hide other elements show error
+            loader.hidden=true;
+            authorText.hidden=true;
+            quoteContainer.hidden=false;
+            quoteText.innerText= 'Whoops, something went wrong! Please try again later';
+
+        }
+
+        //getQuote();
     }
 
 }
