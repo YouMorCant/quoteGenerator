@@ -5,10 +5,10 @@ const authorText = document.getElementById('author');
 const twitterBtn = document.getElementById('twitter');
 const newQuoteBtn = document.getElementById('new-quote');
 const loader = document.getElementById('loader');
-const btnContainer = document.getElementById('btn-Container');
+//const btnContainer = document.getElementById('btn-Container');
 
 //declare error counter
-var errorCounter = 0;
+//var errorCounter = 0;
 
 // Loader
 function showLoadingSpinner(){
